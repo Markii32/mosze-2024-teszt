@@ -3,24 +3,33 @@
 constexpr int N_ELEMENTS = 100;
 
 int main()
-{ // Javítottuk a változó nevét hogy egyezzen a definiált konstansal
-    int *b = new int[NELEMENTS]; //NELEMENTS -- N_ELEMENTS
-    std::cout << '1-100 ertekek duplazasa' // Nincsen vége
-    for (int i = 0;)
+{
+    
+    int *b = new int[N_ELEMENTS]; 
+    std::cout << "1-100 ertekek duplazasa" << std::endl; 
+
+    
+    for (int i = 0; i < N_ELEMENTS; i++) 
     {
-        b[i] = i * 2;// Helyesen feltöltjük a tömböt
-    } // Javítottuk az i inicializálást és a ciklus feltételét
-    for (int i = 0; i; i++)//Helyes ciklusfeltétel
-    {
-        std::cout << "Ertek:" // Hozzáadtuk a hiányzó idézőjeleket és az endlt-t
-    }   
-    std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag;
-    for (int i = 0; i < N_ELEMENTS, i++) // Hpzzáadtuk a feltételt i <N_ELEMETNS
-    {
-        atlag += b[i]// Helyesen összeadjuk az elemeket
+        b[i] = i * 2; 
     }
-    atlag /= N_ELEMENTS; //Kiszámítjuk az átlagot
-    std::cout << "Atlag: " << atlag << std::endl; // Kiírjuk az átlagot
+
+    
+    for (int i = 0; i < N_ELEMENTS; i++)
+    {
+        std::cout << "Ertek: " << b[i] << std::endl; 
+    }
+
+    std::cout << "Atlag szamitasa: " << std::endl;
+    int atlag = 0; 
+    for (int i = 0; i < N_ELEMENTS; i++) 
+    {
+        atlag += b[i]; 
+    }
+
+    atlag /= N_ELEMENTS; 
+    std::cout << "Atlag: " << atlag << std::endl; 
+
+    delete[] b; 
     return 0;
 }
