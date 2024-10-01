@@ -32,4 +32,6 @@ int main()
 
     delete[] b; 
     return 0;
+
+    std::cout << Program vége << std::endl;
 }
